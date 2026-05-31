@@ -1,0 +1,397 @@
+{
+  "username": "@tech_babe",
+  "mode": "mock",
+  "events": [
+    {
+      "seq": 0,
+      "event": "run_started",
+      "stage": null,
+      "attempt": 1,
+      "elapsed_ms": 0,
+      "message": "Finding tonight's show for @tech_babe\u2026",
+      "data": {
+        "username": "@tech_babe",
+        "mode": "mock",
+        "user_platforms": [
+          "netflix",
+          "hbo"
+        ]
+      }
+    },
+    {
+      "seq": 1,
+      "event": "stage_started",
+      "stage": "insta_reader",
+      "attempt": 1,
+      "elapsed_ms": 0,
+      "message": "Reading @tech_babe's profile\u2026",
+      "data": null
+    },
+    {
+      "seq": 2,
+      "event": "stage_completed",
+      "stage": "insta_reader",
+      "attempt": 1,
+      "elapsed_ms": 602,
+      "message": "Read 6 posts \u00b7 8 hashtags",
+      "data": {
+        "handle": "@tech_babe",
+        "display_name": "Nova \u26a1 builds things",
+        "bio": "founder @ stealth | ex-ML eng | mechanical keyboards & cold brew | sci-fi hoarder | shipping > talking | she/her",
+        "posts": [
+          "shipped a feature at 2am fueled by cold brew and spite, classic",
+          "my mechanical keyboard arrived and the thock is *chef's kiss* \u2328\ufe0f",
+          "rewatched Black Mirror, genuinely cannot stop thinking about the implications",
+          "hot take: the best sci-fi is the one that's basically a documentary about next tuesday",
+          "soldering my own split keyboard this weekend, wish me luck",
+          "demo day prep \u2014 investors love a clean dashboard and a scary roadmap"
+        ],
+        "hashtags": [
+          "buildinpublic",
+          "startup",
+          "machinelearning",
+          "scifi",
+          "mechkeys",
+          "coldbrew",
+          "dystopia",
+          "founderlife"
+        ]
+      }
+    },
+    {
+      "seq": 3,
+      "event": "stage_started",
+      "stage": "interest_profiler",
+      "attempt": 1,
+      "elapsed_ms": 604,
+      "message": "Analysing interests & vibe\u2026",
+      "data": null
+    },
+    {
+      "seq": 4,
+      "event": "stage_completed",
+      "stage": "interest_profiler",
+      "attempt": 1,
+      "elapsed_ms": 1706,
+      "message": "Built psychographic profile",
+      "data": {
+        "primary_interests": [
+          "building startups / shipping product",
+          "machine learning & AI",
+          "mechanical keyboards & gadgets",
+          "speculative sci-fi",
+          "cold brew\u2013fuelled deep work"
+        ],
+        "aesthetic_vibe": "high-energy builder with a dark, near-future sci-fi imagination \u2014 fast-talking, opinionated, terminally online",
+        "recommended_genres": [
+          "sci-fi",
+          "psychological thriller",
+          "tech thriller",
+          "dystopian drama"
+        ]
+      }
+    },
+    {
+      "seq": 5,
+      "event": "stage_started",
+      "stage": "show_matcher",
+      "attempt": 1,
+      "elapsed_ms": 1708,
+      "message": "Matching date-night shows\u2026",
+      "data": null
+    },
+    {
+      "seq": 6,
+      "event": "stage_completed",
+      "stage": "show_matcher",
+      "attempt": 1,
+      "elapsed_ms": 2710,
+      "message": "3 candidate(s) proposed",
+      "data": {
+        "candidates": [
+          {
+            "title": "Mr. Robot",
+            "year": 2015,
+            "genres": [
+              "psychological thriller",
+              "tech thriller",
+              "drama"
+            ],
+            "why": "A paranoid, beautifully shot hacker thriller \u2014 basically her timeline rendered as prestige TV."
+          },
+          {
+            "title": "Black Mirror",
+            "year": 2011,
+            "genres": [
+              "sci-fi",
+              "anthology",
+              "psychological thriller"
+            ],
+            "why": "Near-future 'documentary about next Tuesday' sci-fi she already can't stop thinking about \u2014 instant debate fuel."
+          },
+          {
+            "title": "Westworld",
+            "year": 2016,
+            "genres": [
+              "sci-fi",
+              "psychological thriller"
+            ],
+            "why": "Big-ideas sci-fi about AI and free will \u2014 exactly the kind of implications she loves to argue at 2am."
+          }
+        ]
+      }
+    },
+    {
+      "seq": 7,
+      "event": "stage_started",
+      "stage": "streaming_checker",
+      "attempt": 1,
+      "elapsed_ms": 2711,
+      "message": "Checking availability on NETFLIX, HBO (via MCP tool)\u2026",
+      "data": null
+    },
+    {
+      "seq": 8,
+      "event": "stage_completed",
+      "stage": "streaming_checker",
+      "attempt": 1,
+      "elapsed_ms": 3895,
+      "message": "2/3 available on your subscriptions",
+      "data": {
+        "results": [
+          {
+            "title": "Mr. Robot",
+            "found": true,
+            "available": false,
+            "platforms": [],
+            "all_platforms": [
+              "prime"
+            ]
+          },
+          {
+            "title": "Black Mirror",
+            "found": true,
+            "available": true,
+            "platforms": [
+              "netflix"
+            ],
+            "all_platforms": [
+              "netflix"
+            ]
+          },
+          {
+            "title": "Westworld",
+            "found": true,
+            "available": true,
+            "platforms": [
+              "hbo"
+            ],
+            "all_platforms": [
+              "hbo"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "seq": 9,
+      "event": "repick",
+      "stage": "show_matcher",
+      "attempt": 2,
+      "elapsed_ms": 3895,
+      "message": "A pick wasn't on your subscriptions \u2014 re-picking",
+      "data": {
+        "excluded": [
+          {
+            "title": "Mr. Robot",
+            "reason": "only on prime (not subscribed)"
+          }
+        ]
+      }
+    },
+    {
+      "seq": 10,
+      "event": "stage_started",
+      "stage": "show_matcher",
+      "attempt": 2,
+      "elapsed_ms": 3895,
+      "message": "Matching date-night shows\u2026",
+      "data": null
+    },
+    {
+      "seq": 11,
+      "event": "stage_completed",
+      "stage": "show_matcher",
+      "attempt": 2,
+      "elapsed_ms": 4897,
+      "message": "3 candidate(s) proposed",
+      "data": {
+        "candidates": [
+          {
+            "title": "Dark",
+            "year": 2017,
+            "genres": [
+              "sci-fi",
+              "psychological thriller",
+              "mystery"
+            ],
+            "why": "Mind-bending sci-fi with airtight plotting \u2014 a puzzle box for someone who solders her own keyboards."
+          },
+          {
+            "title": "The Last of Us",
+            "year": 2023,
+            "genres": [
+              "sci-fi",
+              "drama",
+              "post-apocalyptic"
+            ],
+            "why": "Sci-fi with real emotional stakes \u2014 gripping and very discussable."
+          },
+          {
+            "title": "Watchmen",
+            "year": 2019,
+            "genres": [
+              "sci-fi",
+              "superhero",
+              "drama"
+            ],
+            "why": "Cerebral, stylish and political superhero sci-fi \u2014 smart enough to keep her arguing."
+          }
+        ]
+      }
+    },
+    {
+      "seq": 12,
+      "event": "stage_started",
+      "stage": "streaming_checker",
+      "attempt": 2,
+      "elapsed_ms": 4899,
+      "message": "Checking availability on NETFLIX, HBO (via MCP tool)\u2026",
+      "data": null
+    },
+    {
+      "seq": 13,
+      "event": "stage_completed",
+      "stage": "streaming_checker",
+      "attempt": 2,
+      "elapsed_ms": 6082,
+      "message": "3/3 available on your subscriptions",
+      "data": {
+        "results": [
+          {
+            "title": "Dark",
+            "found": true,
+            "available": true,
+            "platforms": [
+              "netflix"
+            ],
+            "all_platforms": [
+              "netflix"
+            ]
+          },
+          {
+            "title": "The Last of Us",
+            "found": true,
+            "available": true,
+            "platforms": [
+              "hbo"
+            ],
+            "all_platforms": [
+              "hbo"
+            ]
+          },
+          {
+            "title": "Watchmen",
+            "found": true,
+            "available": true,
+            "platforms": [
+              "hbo"
+            ],
+            "all_platforms": [
+              "hbo"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "seq": 14,
+      "event": "run_completed",
+      "stage": null,
+      "attempt": 1,
+      "elapsed_ms": 6083,
+      "message": "Tonight's lineup is ready",
+      "data": {
+        "username": "@tech_babe",
+        "mode": "mock",
+        "profile": {
+          "primary_interests": [
+            "building startups / shipping product",
+            "machine learning & AI",
+            "mechanical keyboards & gadgets",
+            "speculative sci-fi",
+            "cold brew\u2013fuelled deep work"
+          ],
+          "aesthetic_vibe": "high-energy builder with a dark, near-future sci-fi imagination \u2014 fast-talking, opinionated, terminally online",
+          "recommended_genres": [
+            "sci-fi",
+            "psychological thriller",
+            "tech thriller",
+            "dystopian drama"
+          ]
+        },
+        "picks": [
+          {
+            "title": "Black Mirror",
+            "year": 2011,
+            "genres": [
+              "sci-fi",
+              "anthology",
+              "psychological thriller"
+            ],
+            "why": "Near-future 'documentary about next Tuesday' sci-fi she already can't stop thinking about \u2014 instant debate fuel.",
+            "platforms": [
+              "netflix"
+            ]
+          },
+          {
+            "title": "Westworld",
+            "year": 2016,
+            "genres": [
+              "sci-fi",
+              "psychological thriller"
+            ],
+            "why": "Big-ideas sci-fi about AI and free will \u2014 exactly the kind of implications she loves to argue at 2am.",
+            "platforms": [
+              "hbo"
+            ]
+          },
+          {
+            "title": "Dark",
+            "year": 2017,
+            "genres": [
+              "sci-fi",
+              "psychological thriller",
+              "mystery"
+            ],
+            "why": "Mind-bending sci-fi with airtight plotting \u2014 a puzzle box for someone who solders her own keyboards.",
+            "platforms": [
+              "netflix"
+            ]
+          }
+        ],
+        "excluded": [
+          {
+            "title": "Mr. Robot",
+            "reason": "only on prime (not subscribed)"
+          }
+        ],
+        "attempts": 2,
+        "user_platforms": [
+          "netflix",
+          "hbo"
+        ]
+      }
+    }
+  ]
+}

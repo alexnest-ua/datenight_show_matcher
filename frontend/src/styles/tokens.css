@@ -1,0 +1,158 @@
+/* ─────────────────────────────────────────────────────────────
+   PlayFix design tokens — "Warm Premium on Void" — see docs/brand.md.
+   Dark is the default and the star; [data-theme="light"] is a tasteful
+   warm override that softens glows into neutral shadows.
+   ───────────────────────────────────────────────────────────── */
+
+:root {
+  /* ── Surfaces (dark, default) — true-void depth ─────────────── */
+  --bg: #050506;
+  --bg-elev: #0b0c0e;
+  --surface: #101114;
+  --surface-2: #16181c;
+
+  /* Translucent surfaces for glass morphism (over the void). */
+  --glass: rgba(255, 255, 255, 0.04);
+  --glass-2: rgba(255, 255, 255, 0.06);
+
+  --border: rgba(255, 255, 255, 0.08);
+  --border-subtle: rgba(255, 255, 255, 0.05);
+  --border-strong: rgba(255, 255, 255, 0.14);
+
+  --text: #f7f8fa;
+  --text-muted: #9ba3b0;
+  --text-dim: #7c8492; /* ≥4.5:1 on void (placeholder + timings) */
+
+  /* ── Brand accents (warm date-night, NOT bitcoin orange) ────── */
+  --primary: #ef4444; /* PlayFix red — CTAs, active state, logo "Fix" */
+  --primary-deep: #dc2626;
+  --primary-hover: #dc2626;
+  --accent: #f5b53f; /* warm gold — value / highlight / available */
+  --accent-deep: #e09a2a;
+  --success: #34d399;
+  --warn: #f5b53f;
+
+  /* Link colour — warm gold reads better on void than blue. */
+  --link: var(--accent);
+
+  /* Signature warm gradient (headlines, primary button, connectors). */
+  --gradient-warm: linear-gradient(90deg, #ef4444, #f5b53f);
+
+  /* ── Glows (the luminescence) ───────────────────────────────── */
+  --glow-primary: 0 0 28px -8px rgba(239, 68, 68, 0.45);
+  --glow-primary-strong: 0 0 38px -8px rgba(239, 68, 68, 0.6);
+  --glow-accent: 0 0 24px -6px rgba(245, 181, 63, 0.4);
+  --glow-card: 0 0 50px -16px rgba(239, 68, 68, 0.12);
+
+  /* Soft, low-opacity drop shadow for card elevation (no heavy black). */
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 18px 40px -24px rgba(0, 0, 0, 0.7);
+
+  /* ── Texture ────────────────────────────────────────────────── */
+  --grid-line: rgba(255, 255, 255, 0.035);
+
+  /* Platform badges (tuned for void). */
+  --netflix: #e50914;
+  --hbo: #a06bff;
+  --prime: #2ab6e6;
+
+  /* Tinted status overlays (low opacity). */
+  --primary-tint: rgba(239, 68, 68, 0.12);
+  --accent-tint: rgba(245, 181, 63, 0.12);
+  --warn-tint: rgba(245, 181, 63, 0.12);
+  --success-tint: rgba(52, 211, 153, 0.12);
+
+  /* ── Shape ──────────────────────────────────────────────────── */
+  --radius: 0.75rem; /* inner elements */
+  --radius-lg: 1rem; /* cards */
+  --radius-pill: 9999px;
+
+  /* ── Spacing scale (rem) ────────────────────────────────────── */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4.5rem;
+
+  /* ── Type ───────────────────────────────────────────────────── */
+  --font-heading:
+    "Space Grotesk", "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
+    sans-serif;
+  --font-sans:
+    "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+  --font-mono:
+    "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* Font sizes — all >= 1rem (brand floor). */
+  --fs-base: 1rem;
+  --fs-sm: 1rem; /* never below 1rem; "small" still 1rem */
+  --fs-md: 1.0625rem;
+  --fs-lg: 1.25rem;
+  --fs-xl: 1.5rem;
+  --fs-2xl: 2.25rem;
+  --fs-3xl: 3.25rem;
+
+  /* Mono micro-label tracking. */
+  --track-label: 0.12em;
+
+  /* ── Motion ─────────────────────────────────────────────────── */
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1); /* ease-out */
+  --dur: 200ms;
+  --dur-fast: 150ms;
+
+  /* ── z-index scale ──────────────────────────────────────────── */
+  --z-bg: 0;
+  --z-skip: 100;
+  --z-header: 50;
+
+  /* ── Layout ─────────────────────────────────────────────────── */
+  --content-max: 70rem;
+}
+
+[data-theme="light"] {
+  /* Warm premium, not pure white. Glows soften to neutral shadows. */
+  --bg: #faf7f4;
+  --bg-elev: #ffffff;
+  --surface: #ffffff;
+  --surface-2: #f4efea;
+
+  --glass: rgba(255, 255, 255, 0.7);
+  --glass-2: rgba(255, 255, 255, 0.85);
+
+  --border: rgba(0, 0, 0, 0.08);
+  --border-subtle: rgba(0, 0, 0, 0.05);
+  --border-strong: rgba(0, 0, 0, 0.14);
+
+  --text: #1a1614;
+  --text-muted: #5c5550;
+  --text-dim: #736a63; /* ≥4.5:1 on warm-white */
+
+  --primary: #dc2626;
+  --primary-deep: #b91c1c;
+  --primary-hover: #b91c1c;
+  --accent: #946212; /* deeper gold — ≥4.5:1 as text on warm-white */
+  --accent-deep: #7d520e;
+  --success: #15803d;
+  --warn: #946212;
+
+  /* Gradient can keep the brighter gold (decorative fill, not text). */
+  --gradient-warm: linear-gradient(90deg, #dc2626, #c2841a);
+
+  /* Disable colored glows on light — use subtle neutral shadows instead. */
+  --glow-primary: 0 6px 16px -8px rgba(0, 0, 0, 0.25);
+  --glow-primary-strong: 0 8px 20px -8px rgba(0, 0, 0, 0.3);
+  --glow-accent: 0 6px 16px -8px rgba(0, 0, 0, 0.2);
+  --glow-card: 0 10px 30px -18px rgba(0, 0, 0, 0.25);
+
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.06), 0 12px 28px -20px rgba(0, 0, 0, 0.18);
+
+  --grid-line: rgba(0, 0, 0, 0.04);
+
+  --primary-tint: rgba(220, 38, 38, 0.1);
+  --accent-tint: rgba(194, 132, 26, 0.14);
+  --warn-tint: rgba(194, 132, 26, 0.14);
+  --success-tint: rgba(21, 128, 61, 0.12);
+}

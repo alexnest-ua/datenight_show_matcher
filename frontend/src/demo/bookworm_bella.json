@@ -1,0 +1,269 @@
+{
+  "username": "@bookworm_bella",
+  "mode": "mock",
+  "events": [
+    {
+      "seq": 0,
+      "event": "run_started",
+      "stage": null,
+      "attempt": 1,
+      "elapsed_ms": 0,
+      "message": "Finding tonight's show for @bookworm_bella\u2026",
+      "data": {
+        "username": "@bookworm_bella",
+        "mode": "mock",
+        "user_platforms": [
+          "netflix",
+          "hbo"
+        ]
+      }
+    },
+    {
+      "seq": 1,
+      "event": "stage_started",
+      "stage": "insta_reader",
+      "attempt": 1,
+      "elapsed_ms": 0,
+      "message": "Reading @bookworm_bella's profile\u2026",
+      "data": null
+    },
+    {
+      "seq": 2,
+      "event": "stage_completed",
+      "stage": "insta_reader",
+      "attempt": 1,
+      "elapsed_ms": 602,
+      "message": "Read 6 posts \u00b7 8 hashtags",
+      "data": {
+        "handle": "@bookworm_bella",
+        "display_name": "Bella reads \u2726",
+        "bio": "perpetually mid-novel \ud83d\udcda | classics & cosy mysteries | tea snob | cottagecore enthusiast | history nerd | TBR longer than my life",
+        "posts": [
+          "finished a 600-page Victorian doorstopper and immediately bought the sequel",
+          "tea + rain + a murder mystery = my entire personality this season \u2615\ufe0f",
+          "pressed flowers between the pages again, future me will be delighted",
+          "the costuming in period dramas is doing more for me than any plot",
+          "annotated my favourite novel so heavily it's basically a diary now",
+          "cottage daydream: woodsmoke, wool socks, candlelight, a good whodunit"
+        ],
+        "hashtags": [
+          "bookstagram",
+          "classics",
+          "cosymystery",
+          "cottagecore",
+          "perioddrama",
+          "tealover",
+          "historynerd",
+          "darkacademia"
+        ]
+      }
+    },
+    {
+      "seq": 3,
+      "event": "stage_started",
+      "stage": "interest_profiler",
+      "attempt": 1,
+      "elapsed_ms": 604,
+      "message": "Analysing interests & vibe\u2026",
+      "data": null
+    },
+    {
+      "seq": 4,
+      "event": "stage_completed",
+      "stage": "interest_profiler",
+      "attempt": 1,
+      "elapsed_ms": 1706,
+      "message": "Built psychographic profile",
+      "data": {
+        "primary_interests": [
+          "classic & literary fiction",
+          "cosy mysteries",
+          "cottagecore & tea culture",
+          "history",
+          "annotating books"
+        ],
+        "aesthetic_vibe": "candlelit cottagecore dark-academia \u2014 bookish, nostalgic and quietly romantic",
+        "recommended_genres": [
+          "period drama",
+          "prestige drama",
+          "mystery",
+          "fantasy"
+        ]
+      }
+    },
+    {
+      "seq": 5,
+      "event": "stage_started",
+      "stage": "show_matcher",
+      "attempt": 1,
+      "elapsed_ms": 1707,
+      "message": "Matching date-night shows\u2026",
+      "data": null
+    },
+    {
+      "seq": 6,
+      "event": "stage_completed",
+      "stage": "show_matcher",
+      "attempt": 1,
+      "elapsed_ms": 2709,
+      "message": "3 candidate(s) proposed",
+      "data": {
+        "candidates": [
+          {
+            "title": "The Crown",
+            "year": 2016,
+            "genres": [
+              "prestige drama",
+              "period drama"
+            ],
+            "why": "Sumptuous period prestige \u2014 catnip for a Victorian-doorstopper, history-nerd reader."
+          },
+          {
+            "title": "House of the Dragon",
+            "year": 2022,
+            "genres": [
+              "fantasy",
+              "prestige drama"
+            ],
+            "why": "Epic, lavish fantasy with palace intrigue \u2014 scratches the same itch as a 600-page saga."
+          },
+          {
+            "title": "Bridgerton",
+            "year": 2020,
+            "genres": [
+              "romance",
+              "period drama"
+            ],
+            "why": "Cosy, romantic and beautifully costumed \u2014 period-drama comfort with conversation built in."
+          }
+        ]
+      }
+    },
+    {
+      "seq": 7,
+      "event": "stage_started",
+      "stage": "streaming_checker",
+      "attempt": 1,
+      "elapsed_ms": 2711,
+      "message": "Checking availability on NETFLIX, HBO (via MCP tool)\u2026",
+      "data": null
+    },
+    {
+      "seq": 8,
+      "event": "stage_completed",
+      "stage": "streaming_checker",
+      "attempt": 1,
+      "elapsed_ms": 3906,
+      "message": "3/3 available on your subscriptions",
+      "data": {
+        "results": [
+          {
+            "title": "The Crown",
+            "found": true,
+            "available": true,
+            "platforms": [
+              "netflix"
+            ],
+            "all_platforms": [
+              "netflix"
+            ]
+          },
+          {
+            "title": "House of the Dragon",
+            "found": true,
+            "available": true,
+            "platforms": [
+              "hbo"
+            ],
+            "all_platforms": [
+              "hbo"
+            ]
+          },
+          {
+            "title": "Bridgerton",
+            "found": true,
+            "available": true,
+            "platforms": [
+              "netflix"
+            ],
+            "all_platforms": [
+              "netflix"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "seq": 9,
+      "event": "run_completed",
+      "stage": null,
+      "attempt": 1,
+      "elapsed_ms": 3906,
+      "message": "Tonight's lineup is ready",
+      "data": {
+        "username": "@bookworm_bella",
+        "mode": "mock",
+        "profile": {
+          "primary_interests": [
+            "classic & literary fiction",
+            "cosy mysteries",
+            "cottagecore & tea culture",
+            "history",
+            "annotating books"
+          ],
+          "aesthetic_vibe": "candlelit cottagecore dark-academia \u2014 bookish, nostalgic and quietly romantic",
+          "recommended_genres": [
+            "period drama",
+            "prestige drama",
+            "mystery",
+            "fantasy"
+          ]
+        },
+        "picks": [
+          {
+            "title": "The Crown",
+            "year": 2016,
+            "genres": [
+              "prestige drama",
+              "period drama"
+            ],
+            "why": "Sumptuous period prestige \u2014 catnip for a Victorian-doorstopper, history-nerd reader.",
+            "platforms": [
+              "netflix"
+            ]
+          },
+          {
+            "title": "House of the Dragon",
+            "year": 2022,
+            "genres": [
+              "fantasy",
+              "prestige drama"
+            ],
+            "why": "Epic, lavish fantasy with palace intrigue \u2014 scratches the same itch as a 600-page saga.",
+            "platforms": [
+              "hbo"
+            ]
+          },
+          {
+            "title": "Bridgerton",
+            "year": 2020,
+            "genres": [
+              "romance",
+              "period drama"
+            ],
+            "why": "Cosy, romantic and beautifully costumed \u2014 period-drama comfort with conversation built in.",
+            "platforms": [
+              "netflix"
+            ]
+          }
+        ],
+        "excluded": [],
+        "attempts": 1,
+        "user_platforms": [
+          "netflix",
+          "hbo"
+        ]
+      }
+    }
+  ]
+}

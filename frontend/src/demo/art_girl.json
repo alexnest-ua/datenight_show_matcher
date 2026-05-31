@@ -1,0 +1,395 @@
+{
+  "username": "@art_girl",
+  "mode": "mock",
+  "events": [
+    {
+      "seq": 0,
+      "event": "run_started",
+      "stage": null,
+      "attempt": 1,
+      "elapsed_ms": 0,
+      "message": "Finding tonight's show for @art_girl\u2026",
+      "data": {
+        "username": "@art_girl",
+        "mode": "mock",
+        "user_platforms": [
+          "netflix",
+          "hbo"
+        ]
+      }
+    },
+    {
+      "seq": 1,
+      "event": "stage_started",
+      "stage": "insta_reader",
+      "attempt": 1,
+      "elapsed_ms": 1,
+      "message": "Reading @art_girl's profile\u2026",
+      "data": null
+    },
+    {
+      "seq": 2,
+      "event": "stage_completed",
+      "stage": "insta_reader",
+      "attempt": 1,
+      "elapsed_ms": 602,
+      "message": "Read 6 posts \u00b7 8 hashtags",
+      "data": {
+        "handle": "@art_girl",
+        "display_name": "mara \u00b7 35mm",
+        "bio": "painter & analog photographer \ud83c\udf9e\ufe0f | thrifted fits | gallery hopping > brunch | ceramics on sundays | romanticising the ordinary",
+        "posts": [
+          "spent the whole afternoon in the darkroom, smell of fixer >>> any perfume",
+          "found a 1970s trench at the flea market for \u20ac8, she's coming on every date now",
+          "Rothko room at the museum made me cry a little, no notes",
+          "slow morning: oat latte, Joan Didion, grainy light through the blinds",
+          "my ceramics are lopsided but they're MINE \ud83c\udffa",
+          "rewatched a Wong Kar-wai film for the mood lighting alone"
+        ],
+        "hashtags": [
+          "filmphotography",
+          "35mm",
+          "thrifted",
+          "slowliving",
+          "arthouse",
+          "ceramics",
+          "analogvibes",
+          "museumdate"
+        ]
+      }
+    },
+    {
+      "seq": 3,
+      "event": "stage_started",
+      "stage": "interest_profiler",
+      "attempt": 1,
+      "elapsed_ms": 603,
+      "message": "Analysing interests & vibe\u2026",
+      "data": null
+    },
+    {
+      "seq": 4,
+      "event": "stage_completed",
+      "stage": "interest_profiler",
+      "attempt": 1,
+      "elapsed_ms": 1705,
+      "message": "Built psychographic profile",
+      "data": {
+        "primary_interests": [
+          "analog & 35mm film photography",
+          "indie / arthouse cinema",
+          "vintage & thrifted fashion",
+          "ceramics and gallery-going",
+          "slow, intentional living"
+        ],
+        "aesthetic_vibe": "soft, grainy film-still energy \u2014 vintage, creative and a little melancholic, romanticising the ordinary",
+        "recommended_genres": [
+          "prestige drama",
+          "dark comedy",
+          "romance",
+          "coming-of-age"
+        ]
+      }
+    },
+    {
+      "seq": 5,
+      "event": "stage_started",
+      "stage": "show_matcher",
+      "attempt": 1,
+      "elapsed_ms": 1708,
+      "message": "Matching date-night shows\u2026",
+      "data": null
+    },
+    {
+      "seq": 6,
+      "event": "stage_completed",
+      "stage": "show_matcher",
+      "attempt": 1,
+      "elapsed_ms": 2710,
+      "message": "3 candidate(s) proposed",
+      "data": {
+        "candidates": [
+          {
+            "title": "Fleabag",
+            "year": 2016,
+            "genres": [
+              "dark comedy",
+              "drama",
+              "romance"
+            ],
+            "why": "Witty, intimate and achingly stylish \u2014 its bittersweet humour is catnip for an arthouse romantic who reads Didion on slow mornings."
+          },
+          {
+            "title": "The White Lotus",
+            "year": 2021,
+            "genres": [
+              "dark comedy",
+              "drama",
+              "mystery"
+            ],
+            "why": "Gorgeous to look at and impossible not to dissect afterward \u2014 perfect for someone who teared up in the Rothko room."
+          },
+          {
+            "title": "Normal People",
+            "year": 2020,
+            "genres": [
+              "romance",
+              "drama"
+            ],
+            "why": "Tender, beautifully shot and quietly devastating \u2014 matches her film-grain, romanticise-the-ordinary energy."
+          }
+        ]
+      }
+    },
+    {
+      "seq": 7,
+      "event": "stage_started",
+      "stage": "streaming_checker",
+      "attempt": 1,
+      "elapsed_ms": 2712,
+      "message": "Checking availability on NETFLIX, HBO (via MCP tool)\u2026",
+      "data": null
+    },
+    {
+      "seq": 8,
+      "event": "stage_completed",
+      "stage": "streaming_checker",
+      "attempt": 1,
+      "elapsed_ms": 3895,
+      "message": "2/3 available on your subscriptions",
+      "data": {
+        "results": [
+          {
+            "title": "Fleabag",
+            "found": true,
+            "available": false,
+            "platforms": [],
+            "all_platforms": [
+              "prime"
+            ]
+          },
+          {
+            "title": "The White Lotus",
+            "found": true,
+            "available": true,
+            "platforms": [
+              "hbo"
+            ],
+            "all_platforms": [
+              "hbo"
+            ]
+          },
+          {
+            "title": "Normal People",
+            "found": true,
+            "available": true,
+            "platforms": [
+              "hbo"
+            ],
+            "all_platforms": [
+              "hbo"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "seq": 9,
+      "event": "repick",
+      "stage": "show_matcher",
+      "attempt": 2,
+      "elapsed_ms": 3895,
+      "message": "A pick wasn't on your subscriptions \u2014 re-picking",
+      "data": {
+        "excluded": [
+          {
+            "title": "Fleabag",
+            "reason": "only on prime (not subscribed)"
+          }
+        ]
+      }
+    },
+    {
+      "seq": 10,
+      "event": "stage_started",
+      "stage": "show_matcher",
+      "attempt": 2,
+      "elapsed_ms": 3895,
+      "message": "Matching date-night shows\u2026",
+      "data": null
+    },
+    {
+      "seq": 11,
+      "event": "stage_completed",
+      "stage": "show_matcher",
+      "attempt": 2,
+      "elapsed_ms": 4896,
+      "message": "3 candidate(s) proposed",
+      "data": {
+        "candidates": [
+          {
+            "title": "Sex Education",
+            "year": 2019,
+            "genres": [
+              "dark comedy",
+              "drama",
+              "romance"
+            ],
+            "why": "Warm, funny and visually bold with real heart \u2014 easy, charming date-night watching that still has something to say."
+          },
+          {
+            "title": "Euphoria",
+            "year": 2019,
+            "genres": [
+              "teen drama",
+              "drama"
+            ],
+            "why": "Stylistically daring and painterly \u2014 speaks to her aesthetic eye, though it runs bold."
+          },
+          {
+            "title": "Bridgerton",
+            "year": 2020,
+            "genres": [
+              "romance",
+              "period drama"
+            ],
+            "why": "Lush costuming and swoony romance \u2014 pure aesthetic comfort viewing."
+          }
+        ]
+      }
+    },
+    {
+      "seq": 12,
+      "event": "stage_started",
+      "stage": "streaming_checker",
+      "attempt": 2,
+      "elapsed_ms": 4898,
+      "message": "Checking availability on NETFLIX, HBO (via MCP tool)\u2026",
+      "data": null
+    },
+    {
+      "seq": 13,
+      "event": "stage_completed",
+      "stage": "streaming_checker",
+      "attempt": 2,
+      "elapsed_ms": 6065,
+      "message": "3/3 available on your subscriptions",
+      "data": {
+        "results": [
+          {
+            "title": "Sex Education",
+            "found": true,
+            "available": true,
+            "platforms": [
+              "netflix"
+            ],
+            "all_platforms": [
+              "netflix"
+            ]
+          },
+          {
+            "title": "Euphoria",
+            "found": true,
+            "available": true,
+            "platforms": [
+              "hbo"
+            ],
+            "all_platforms": [
+              "hbo"
+            ]
+          },
+          {
+            "title": "Bridgerton",
+            "found": true,
+            "available": true,
+            "platforms": [
+              "netflix"
+            ],
+            "all_platforms": [
+              "netflix"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "seq": 14,
+      "event": "run_completed",
+      "stage": null,
+      "attempt": 1,
+      "elapsed_ms": 6066,
+      "message": "Tonight's lineup is ready",
+      "data": {
+        "username": "@art_girl",
+        "mode": "mock",
+        "profile": {
+          "primary_interests": [
+            "analog & 35mm film photography",
+            "indie / arthouse cinema",
+            "vintage & thrifted fashion",
+            "ceramics and gallery-going",
+            "slow, intentional living"
+          ],
+          "aesthetic_vibe": "soft, grainy film-still energy \u2014 vintage, creative and a little melancholic, romanticising the ordinary",
+          "recommended_genres": [
+            "prestige drama",
+            "dark comedy",
+            "romance",
+            "coming-of-age"
+          ]
+        },
+        "picks": [
+          {
+            "title": "The White Lotus",
+            "year": 2021,
+            "genres": [
+              "dark comedy",
+              "drama",
+              "mystery"
+            ],
+            "why": "Gorgeous to look at and impossible not to dissect afterward \u2014 perfect for someone who teared up in the Rothko room.",
+            "platforms": [
+              "hbo"
+            ]
+          },
+          {
+            "title": "Normal People",
+            "year": 2020,
+            "genres": [
+              "romance",
+              "drama"
+            ],
+            "why": "Tender, beautifully shot and quietly devastating \u2014 matches her film-grain, romanticise-the-ordinary energy.",
+            "platforms": [
+              "hbo"
+            ]
+          },
+          {
+            "title": "Sex Education",
+            "year": 2019,
+            "genres": [
+              "dark comedy",
+              "drama",
+              "romance"
+            ],
+            "why": "Warm, funny and visually bold with real heart \u2014 easy, charming date-night watching that still has something to say.",
+            "platforms": [
+              "netflix"
+            ]
+          }
+        ],
+        "excluded": [
+          {
+            "title": "Fleabag",
+            "reason": "only on prime (not subscribed)"
+          }
+        ],
+        "attempts": 2,
+        "user_platforms": [
+          "netflix",
+          "hbo"
+        ]
+      }
+    }
+  ]
+}

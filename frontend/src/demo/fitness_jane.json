@@ -1,0 +1,272 @@
+{
+  "username": "@fitness_jane",
+  "mode": "mock",
+  "events": [
+    {
+      "seq": 0,
+      "event": "run_started",
+      "stage": null,
+      "attempt": 1,
+      "elapsed_ms": 0,
+      "message": "Finding tonight's show for @fitness_jane\u2026",
+      "data": {
+        "username": "@fitness_jane",
+        "mode": "mock",
+        "user_platforms": [
+          "netflix",
+          "hbo"
+        ]
+      }
+    },
+    {
+      "seq": 1,
+      "event": "stage_started",
+      "stage": "insta_reader",
+      "attempt": 1,
+      "elapsed_ms": 0,
+      "message": "Reading @fitness_jane's profile\u2026",
+      "data": null
+    },
+    {
+      "seq": 2,
+      "event": "stage_completed",
+      "stage": "insta_reader",
+      "attempt": 1,
+      "elapsed_ms": 601,
+      "message": "Read 6 posts \u00b7 8 hashtags",
+      "data": {
+        "handle": "@fitness_jane",
+        "display_name": "Jane | run \u00b7 lift \u00b7 travel",
+        "bio": "marathon #4 loading \ud83c\udfc3\u200d\u2640\ufe0f | strength coach | smoothie scientist | sunrise > sleep | good vibes only \u2600\ufe0f",
+        "posts": [
+          "5am club checking in \u2014 sunrise long run hits different",
+          "meal prep sunday: 12 containers, 0 regrets \ud83e\udd57",
+          "PR on deadlifts today!! body is a temple etc etc",
+          "weekend hike to the ridge, the view was the whole personality",
+          "trying to convince everyone that a smoothie is a valid dinner",
+          "rest days are for sitcoms and stretching, fight me"
+        ],
+        "hashtags": [
+          "marathontraining",
+          "strengthtraining",
+          "wellness",
+          "hiking",
+          "mealprep",
+          "goodvibes",
+          "5amclub",
+          "feelgood"
+        ]
+      }
+    },
+    {
+      "seq": 3,
+      "event": "stage_started",
+      "stage": "interest_profiler",
+      "attempt": 1,
+      "elapsed_ms": 603,
+      "message": "Analysing interests & vibe\u2026",
+      "data": null
+    },
+    {
+      "seq": 4,
+      "event": "stage_completed",
+      "stage": "interest_profiler",
+      "attempt": 1,
+      "elapsed_ms": 1705,
+      "message": "Built psychographic profile",
+      "data": {
+        "primary_interests": [
+          "marathon & endurance running",
+          "strength training",
+          "wellness & nutrition",
+          "hiking and the outdoors",
+          "travel"
+        ],
+        "aesthetic_vibe": "sunrise-chasing, good-vibes wellness energy \u2014 disciplined but warm and upbeat",
+        "recommended_genres": [
+          "feel-good comedy",
+          "sitcom",
+          "adventure",
+          "reality competition"
+        ]
+      }
+    },
+    {
+      "seq": 5,
+      "event": "stage_started",
+      "stage": "show_matcher",
+      "attempt": 1,
+      "elapsed_ms": 1707,
+      "message": "Matching date-night shows\u2026",
+      "data": null
+    },
+    {
+      "seq": 6,
+      "event": "stage_completed",
+      "stage": "show_matcher",
+      "attempt": 1,
+      "elapsed_ms": 2708,
+      "message": "3 candidate(s) proposed",
+      "data": {
+        "candidates": [
+          {
+            "title": "New Girl",
+            "year": 2011,
+            "genres": [
+              "sitcom",
+              "romance",
+              "feel-good comedy"
+            ],
+            "why": "Sunny, low-stakes and endlessly rewatchable \u2014 the feel-good comfort she puts on for rest-day stretching."
+          },
+          {
+            "title": "Brooklyn Nine-Nine",
+            "year": 2013,
+            "genres": [
+              "sitcom",
+              "feel-good comedy"
+            ],
+            "why": "Fast, warm and funny \u2014 easy banter that keeps a date light and laughing."
+          },
+          {
+            "title": "Outer Banks",
+            "year": 2020,
+            "genres": [
+              "teen drama",
+              "adventure"
+            ],
+            "why": "Sun-soaked adventure with momentum \u2014 matches her outdoorsy, next-trip-already-planned energy."
+          }
+        ]
+      }
+    },
+    {
+      "seq": 7,
+      "event": "stage_started",
+      "stage": "streaming_checker",
+      "attempt": 1,
+      "elapsed_ms": 2710,
+      "message": "Checking availability on NETFLIX, HBO (via MCP tool)\u2026",
+      "data": null
+    },
+    {
+      "seq": 8,
+      "event": "stage_completed",
+      "stage": "streaming_checker",
+      "attempt": 1,
+      "elapsed_ms": 3877,
+      "message": "3/3 available on your subscriptions",
+      "data": {
+        "results": [
+          {
+            "title": "New Girl",
+            "found": true,
+            "available": true,
+            "platforms": [
+              "netflix"
+            ],
+            "all_platforms": [
+              "netflix"
+            ]
+          },
+          {
+            "title": "Brooklyn Nine-Nine",
+            "found": true,
+            "available": true,
+            "platforms": [
+              "netflix"
+            ],
+            "all_platforms": [
+              "netflix",
+              "prime"
+            ]
+          },
+          {
+            "title": "Outer Banks",
+            "found": true,
+            "available": true,
+            "platforms": [
+              "netflix"
+            ],
+            "all_platforms": [
+              "netflix"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "seq": 9,
+      "event": "run_completed",
+      "stage": null,
+      "attempt": 1,
+      "elapsed_ms": 3878,
+      "message": "Tonight's lineup is ready",
+      "data": {
+        "username": "@fitness_jane",
+        "mode": "mock",
+        "profile": {
+          "primary_interests": [
+            "marathon & endurance running",
+            "strength training",
+            "wellness & nutrition",
+            "hiking and the outdoors",
+            "travel"
+          ],
+          "aesthetic_vibe": "sunrise-chasing, good-vibes wellness energy \u2014 disciplined but warm and upbeat",
+          "recommended_genres": [
+            "feel-good comedy",
+            "sitcom",
+            "adventure",
+            "reality competition"
+          ]
+        },
+        "picks": [
+          {
+            "title": "New Girl",
+            "year": 2011,
+            "genres": [
+              "sitcom",
+              "romance",
+              "feel-good comedy"
+            ],
+            "why": "Sunny, low-stakes and endlessly rewatchable \u2014 the feel-good comfort she puts on for rest-day stretching.",
+            "platforms": [
+              "netflix"
+            ]
+          },
+          {
+            "title": "Brooklyn Nine-Nine",
+            "year": 2013,
+            "genres": [
+              "sitcom",
+              "feel-good comedy"
+            ],
+            "why": "Fast, warm and funny \u2014 easy banter that keeps a date light and laughing.",
+            "platforms": [
+              "netflix"
+            ]
+          },
+          {
+            "title": "Outer Banks",
+            "year": 2020,
+            "genres": [
+              "teen drama",
+              "adventure"
+            ],
+            "why": "Sun-soaked adventure with momentum \u2014 matches her outdoorsy, next-trip-already-planned energy.",
+            "platforms": [
+              "netflix"
+            ]
+          }
+        ],
+        "excluded": [],
+        "attempts": 1,
+        "user_platforms": [
+          "netflix",
+          "hbo"
+        ]
+      }
+    }
+  ]
+}

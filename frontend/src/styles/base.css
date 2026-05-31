@@ -1,0 +1,268 @@
+/* ─────────────────────────────────────────────────────────────
+   Base / reset + layout primitives + ambient void background.
+   Reusable classes only. Flexbox layout, rem units, CSS-variable theming.
+   ───────────────────────────────────────────────────────────── */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  /* 1rem === 16px. Font sizes stay in rem throughout. */
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  font-size: var(--fs-base);
+  line-height: 1.6;
+  color: var(--text);
+  background-color: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+p,
+figure {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+img,
+svg {
+  display: block;
+}
+
+/* Visible focus ring on every interactive element (warm primary). */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: var(--radius);
+}
+
+/* ── Ambient void background ─────────────────────────────────────
+   A faint blockchain-style grid that fades at the edges (radial mask)
+   plus two large, very-low-opacity warm radial blobs for depth.
+   Fixed, behind everything, pointer-events: none. */
+.void-bg {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-bg);
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.void-grid {
+  position: absolute;
+  inset: 0;
+  background-size: 3rem 3rem;
+  background-image:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  -webkit-mask-image: radial-gradient(
+    ellipse 80% 60% at 50% 28%,
+    #000 0%,
+    transparent 78%
+  );
+  mask-image: radial-gradient(
+    ellipse 80% 60% at 50% 28%,
+    #000 0%,
+    transparent 78%
+  );
+}
+
+.void-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(110px);
+  opacity: 0.5;
+}
+
+.void-blob--primary {
+  width: 38rem;
+  height: 38rem;
+  top: -14rem;
+  left: -10rem;
+  background: radial-gradient(circle, rgba(239, 68, 68, 0.16), transparent 70%);
+}
+
+.void-blob--accent {
+  width: 34rem;
+  height: 34rem;
+  top: 6rem;
+  right: -12rem;
+  background: radial-gradient(circle, rgba(245, 181, 63, 0.13), transparent 70%);
+}
+
+[data-theme="light"] .void-blob {
+  opacity: 0.6;
+}
+
+[data-theme="light"] .void-blob--primary {
+  background: radial-gradient(circle, rgba(220, 38, 38, 0.07), transparent 70%);
+}
+
+[data-theme="light"] .void-blob--accent {
+  background: radial-gradient(circle, rgba(194, 132, 26, 0.08), transparent 70%);
+}
+
+/* Skip-to-content — first focusable element, off-screen until focused. */
+.skip-link {
+  position: absolute;
+  left: var(--space-3);
+  top: var(--space-3);
+  z-index: var(--z-skip);
+  padding: var(--space-2) var(--space-4);
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-pill);
+  transform: translateY(-200%);
+  transition: transform var(--dur) var(--ease);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+  text-decoration: none;
+}
+
+/* Screen-reader-only utility. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Layout shell — sits above the fixed void background. */
+.app {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--content-max);
+  margin-inline: auto;
+  padding-inline: var(--space-4);
+}
+
+.main {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-7);
+  padding-block: var(--space-7) var(--space-8);
+}
+
+.site-footer {
+  border-top: 1px solid var(--border-subtle);
+  color: var(--text-dim);
+  padding-block: var(--space-5);
+}
+
+.site-footer p {
+  font-family: var(--font-mono);
+  font-size: var(--fs-base);
+  letter-spacing: 0.01em;
+}
+
+/* Generic stacked section */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.section-title {
+  font-size: var(--fs-xl);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+}
+
+.muted {
+  color: var(--text-muted);
+}
+
+/* ── Shared utilities ────────────────────────────────────────────
+   Gradient text — warm gradient clipped to glyphs (hero accent words). */
+.gradient-text {
+  background-image: var(--gradient-warm);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  /* Fallback colour if clip is unsupported. */
+  -webkit-text-fill-color: transparent;
+}
+
+/* Mono micro-label: uppercase, tracked, JetBrains Mono. >= 1rem. */
+.mono-label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-base);
+  font-weight: 500;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+@media (min-width: 48rem) {
+  .container {
+    padding-inline: var(--space-5);
+  }
+}
+
+/* Honour reduced-motion globally: kill non-essential animation. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

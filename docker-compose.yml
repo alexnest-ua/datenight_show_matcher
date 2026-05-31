@@ -1,0 +1,36 @@
+# DateNight Show Matcher — local stack.
+#   docker compose up --build          → web at http://localhost:8091  (LIVE)
+#   WEB_PORT=9000 docker compose up     → change the web host port
+#   docker compose run --rm backend get-show @art_girl
+#
+# Runs in offline MOCK mode out of the box. For real Claude calls, put
+# ANTHROPIC_API_KEY in a root .env (or your shell) before `up`.
+
+services:
+  backend:
+    build: ./backend
+    environment:
+      APP_MODE: ${APP_MODE:-auto}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      MODEL_ANALYSIS: ${MODEL_ANALYSIS:-claude-sonnet-4-6}
+      MODEL_FAST: ${MODEL_FAST:-claude-haiku-4-5-20251001}
+      MAX_REPICKS: ${MAX_REPICKS:-3}
+    ports:
+      - "${BACKEND_PORT:-8090}:8090"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://localhost:8090/health').getcode()==200 else 1)"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 5s
+
+  web:
+    build:
+      context: ./frontend
+      args:
+        VITE_API_BASE: ""
+    ports:
+      - "${WEB_PORT:-8091}:80"
+    depends_on:
+      backend:
+        condition: service_started

@@ -1,0 +1,52 @@
+# ── Python ──────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# ── Local data / secrets ────────────────────────────────
+.env
+.env.*
+!.env.example
+*.db
+*.sqlite
+*.sqlite3
+
+# credentials / keys — never commit
+*.pem
+*.key
+*.p12
+.cred-*
+*-credentials
+secrets.*
+service-account*.json
+
+# company-internal assignment brief — do not publish to the public repo
+datenight_show_matcher_assignment_v3.pdf
+
+# ── Node / frontend ─────────────────────────────────────
+node_modules/
+frontend/dist/
+frontend/.vite/
+*.tsbuildinfo
+
+# ── Editors / OS ────────────────────────────────────────
+.idea/
+.vscode/*
+!.vscode/settings.json
+.DS_Store
+Thumbs.db
+
+# ── Misc ────────────────────────────────────────────────
+*.log
+.cache/

@@ -1,0 +1,52 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "datenight-show-matcher"
+version = "1.0.0"
+description = "Claude-orchestrated CLI that profiles an Instagram handle and matches a date-night show available on the user's streaming subscriptions."
+requires-python = ">=3.11"
+license = { text = "MIT" }
+dependencies = [
+    "anthropic>=0.105,<1",
+    "langgraph>=1.2,<2",
+    "mcp[cli]>=1.27,<2",
+    "fastapi[standard]>=0.115,<1",
+    "uvicorn[standard]>=0.34",
+    "sse-starlette>=2.1",
+    "pydantic>=2.9",
+    "pydantic-settings>=2.5",
+    "typer>=0.12",
+    "rich>=13.7",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.2",
+    "pytest-asyncio>=0.24",
+    "anyio>=4.4",
+    "respx>=0.21",
+    "ruff>=0.6",
+]
+
+[project.scripts]
+# `get-show @art_girl` — primary entrypoint named after the PDF command /get-show
+get-show = "app.cli:run_get_show"
+# `datenight ...` — full Typer CLI (get-show, serve, seed-db, demo-fixtures)
+datenight = "app.cli:app"
+
+[tool.hatch.build.targets.wheel]
+packages = ["app"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+filterwarnings = ["ignore::DeprecationWarning"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
