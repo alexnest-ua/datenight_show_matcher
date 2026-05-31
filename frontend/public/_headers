@@ -1,0 +1,7 @@
+# Cloudflare Pages reads this file to set HTTP response headers.
+# Keep this private interview demo out of search indexes and caches.
+/*
+  X-Robots-Tag: noindex, nofollow, noarchive, nocache
+  Cache-Control: no-store, no-cache, must-revalidate, max-age=0
+  Pragma: no-cache
+  Expires: 0
