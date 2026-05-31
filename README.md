@@ -25,6 +25,8 @@ $ get-show @art_girl
 
 ---
 
+> 📐 **Architecture deep-dive (diagrams + rationale):** [docs/architecture.md](docs/architecture.md)
+
 ## How it maps to the assignment
 
 | Assignment role | Here | Model tier |
@@ -91,6 +93,7 @@ datenight-show-matcher/
 ├── Makefile                    # make install | cli | serve | test | up | demo | …
 ├── .env.example                # all backend config (copy to .env)
 ├── docs/
+│   ├── architecture.md         # component + sequence + state diagrams, design rationale
 │   ├── contracts.md            # FROZEN wire contract: SSE PipelineEvent, HTTP API, fixtures
 │   └── brand.md                # PlayFix-derived design tokens & a11y/perf bar
 ├── backend/
