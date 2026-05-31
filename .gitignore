@@ -34,9 +34,6 @@ service-account*.json
 # company-internal assignment brief — do not publish to the public repo
 datenight_show_matcher_assignment_v3.pdf
 
-# local interview / code-review prep — keep private
-REVIEW-PREP.md
-
 # ── Node / frontend ─────────────────────────────────────
 node_modules/
 frontend/dist/

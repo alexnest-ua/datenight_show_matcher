@@ -17,7 +17,7 @@ async def read_profile(handle: str, settings: Settings) -> ProfileDump:
     dump = get_profile(handle)
 
     if settings.insta_reader_use_llm and settings.effective_mode is RunMode.REAL:
-        from app.agents.prompts import INSTA_READER_SYSTEM
+        from app.agents.prompts import INSTA_READER_SYSTEM, instagram_dump_block
         from app.llm.anthropic_client import build_async_client, parse_json
 
         client = build_async_client(settings)
@@ -25,7 +25,7 @@ async def read_profile(handle: str, settings: Settings) -> ProfileDump:
             client,
             model=settings.model_fast,
             system=INSTA_READER_SYSTEM,
-            user=dump.to_text(),
+            user=instagram_dump_block(dump.to_text()),
             output_model=ProfileDump,
             max_tokens=1024,
         )

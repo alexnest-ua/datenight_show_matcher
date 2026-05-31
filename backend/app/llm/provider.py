@@ -18,6 +18,7 @@ import anthropic
 from app.agents.prompts import (
     INTEREST_PROFILER_SYSTEM,
     SHOW_MATCHER_SYSTEM,
+    instagram_dump_block,
     show_matcher_user_prompt,
 )
 from app.config import RunMode, Settings
@@ -61,7 +62,7 @@ class RealProvider(LLMProvider):
             self._client,
             model=self._settings.model_analysis,
             system=INTEREST_PROFILER_SYSTEM,
-            user=dump.to_text(),
+            user=instagram_dump_block(dump.to_text()),
             output_model=InterestProfile,
         )
 

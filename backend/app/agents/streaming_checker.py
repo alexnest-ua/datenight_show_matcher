@@ -17,7 +17,7 @@ from __future__ import annotations
 
 import json
 
-from app.agents.prompts import streaming_checker_system, streaming_checker_user_prompt
+from app.agents.prompts import STREAMING_CHECKER_SYSTEM, streaming_checker_user_prompt
 from app.config import RunMode, Settings
 from app.llm.anthropic_client import build_async_client, run_tool_loop
 from app.mcp_server.client import MCPCatalogClient
@@ -63,7 +63,7 @@ async def check_availability(
             await run_tool_loop(
                 client,
                 model=settings.model_fast,
-                system=streaming_checker_system(sorted(user_platforms)),
+                system=STREAMING_CHECKER_SYSTEM,
                 user=streaming_checker_user_prompt(titles),
                 tools=mcp.anthropic_tools(),
                 executor=executor,
